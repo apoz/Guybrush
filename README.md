@@ -9,7 +9,7 @@ I'll get some ideas/files from this project: http://www.int33h.com/test/mi/
 
 The JS code/offsets for the font creation:
 
-'''
+```
 function createSpeakerGrandi(img){
 	var sp = new Speaker(img);
 	sp.add("a",1112,40,32,40);
@@ -163,4 +163,4 @@ function createSpeakerGrandi(img){
 	return sp;
 }
 
-''' 
+```
