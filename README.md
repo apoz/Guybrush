@@ -8,6 +8,10 @@ This is just an attempt to make an script for generating Monkey Island style ima
 ```
 brew install libtiff libjpeg webp little-cms
 
+Then install Pillow with:
+
+$ pip install Pillow
+
 ```
 Brew is having issues to install libpng, I've got to check further...
 
