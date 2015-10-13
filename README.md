@@ -2,6 +2,18 @@
 This is just an attempt to make an script for generating Monkey Island style images with custom text on them.
 
 
+# Dependencies
+
+* We will use Pillow python library. It requires the following dependencies:
+```
+brew install libtiff libjpeg webp little-cms
+
+```
+Brew is having issues to install libpng, I've got to check further...
+
+More information can be found in the following link: https://pillow.readthedocs.org/en/3.0.x/installation.html#os-x-installation
+
+
 # Mind dump
 
 I'll get some ideas/files from this project: http://www.int33h.com/test/mi/
