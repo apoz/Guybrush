@@ -13,9 +13,11 @@ class Alphabet:
             self.lettersOffset=self.__generateLettersOffsetDict()
         except:
             self.im = ''
+            e = sys.exc_info()[0]
+            print "Error: " + str(e) 
             sys.exit(1)
 
-    def returnRegionForLetter(self, letter):
+    def regionForLetter(self, letter):
         try:
             region = self.im.crop(self.lettersOffset[letter])
         except:
