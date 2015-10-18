@@ -4,9 +4,9 @@
 from PIL import Image
 import sys
 
-class Image:
+class MyImage:
 
-    def __init__(self, stringOfFileWithSrcImage, textStartCoordinate):
+    def __init__(self, stringOfFileWithSrcImage, textStartCoordinate=(50,50)):
         try:
             self.fileWithImage = stringOfFileWithSrcImage
             self.img = Image.open(stringOfFileWithSrcImage)
@@ -28,6 +28,7 @@ class Image:
     def pasteRegion(self, regionToPaste):
         try:
             self.img.paste(regionToPaste,self.textStartCoordinate,regionToPaste)
+            print ('Done')
             (width, heigth)=regionToPaste.regionSize
             self.textStartCoordinate = (self.textStartCoordinate[0]+width, self.textStartCoordinate[1])
         except:

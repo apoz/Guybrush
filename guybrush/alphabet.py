@@ -21,6 +21,8 @@ class Alphabet:
         try:
             region = self.im.crop(self.lettersOffset[letter])
         except:
+            e = sys.exc_info()[0]
+            print "Error: " + str(e)
             region=''
         return region
 
