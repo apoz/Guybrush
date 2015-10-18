@@ -14,6 +14,7 @@ class Alphabet:
         except:
             self.im = ''
             e = sys.exc_info()[0]
+            print "When trying to initialize the alphabet object"
             print "Error: " + str(e) 
             sys.exit(1)
 
@@ -22,6 +23,7 @@ class Alphabet:
             region = self.im.crop(self.lettersOffset[letter])
         except:
             e = sys.exc_info()[0]
+            print "When extracting region for letter" + letter
             print "Error: " + str(e)
             region=''
         return region

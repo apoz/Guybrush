@@ -9,29 +9,32 @@ class MyImage:
     def __init__(self, stringOfFileWithSrcImage, textStartCoordinate=(50,50)):
         try:
             self.fileWithImage = stringOfFileWithSrcImage
-            self.img = Image.open(stringOfFileWithSrcImage)
+            self.imag = Image.open(stringOfFileWithSrcImage)
+            self.imag.load()
             self.textStartCoordinate = textStartCoordinate
         except:
-            self.img = ''
+            self.imag = ''
             e = sys.exc_info()[0]
+            print "When initializing image object"
             print "Error: " + str(e) 
             sys.exit(2)
 
     def saveImageToFile(self, stringOfFileToSave):
         try:
-    	    self.img.save(stringOfFileToSave)
+    	    self.imag.save(stringOfFileToSave)
         except:
             e = sys.exc_info()[0]
+            print "When saving Image to file"
             print "Error: " + str(e) 
             sys.exit(3)
 
     def pasteRegion(self, regionToPaste):
         try:
-            self.img.paste(regionToPaste,self.textStartCoordinate,regionToPaste)
-            print ('Done')
-            (width, heigth)=regionToPaste.regionSize
+            self.imag.paste(regionToPaste,self.textStartCoordinate,regionToPaste)
+            (width, heigth)=regionToPaste.size
             self.textStartCoordinate = (self.textStartCoordinate[0]+width, self.textStartCoordinate[1])
         except:
             e = sys.exc_info()[0]
+            print "When pasting the region into the Image"
             print "Error: " + str(e) 
             exit(4) 
