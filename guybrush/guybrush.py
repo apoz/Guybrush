@@ -16,7 +16,8 @@ def main():
     print "Text->" + args.text
 
 def addCharacterToImage(myimg, alphab, c):
-    myimg.pasteRegion(alphab.regionForLetter(c))
+    region, verticalOffset = alphab.regionForLetterAndVerticalOffset(c) 
+    myimg.pasteRegion(region, verticalOffset)
 
 def addTextToImage(myimg, alphab, text):
     for c in text:

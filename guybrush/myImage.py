@@ -28,9 +28,10 @@ class MyImage:
             print "Error: " + str(e) 
             sys.exit(3)
 
-    def pasteRegion(self, regionToPaste):
+    def pasteRegion(self, regionToPaste, verticalOffset):
         try:
-            self.imag.paste(regionToPaste,self.textStartCoordinate,regionToPaste)
+            startPoint = (self.textStartCoordinate[0], self.textStartCoordinate[1]+verticalOffset)
+            self.imag.paste(regionToPaste,startPoint,regionToPaste)
             (width, heigth)=regionToPaste.size
             self.textStartCoordinate = (self.textStartCoordinate[0]+width, self.textStartCoordinate[1])
         except:

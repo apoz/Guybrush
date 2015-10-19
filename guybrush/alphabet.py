@@ -11,6 +11,7 @@ class Alphabet:
             self.fileWithAlphabet = stringOfFileWithAlphabet
             self.im = Image.open(stringOfFileWithAlphabet)
             self.lettersOffset=self.__generateLettersOffsetDict()
+            self.defaultVerticalOffset=7
         except:
             self.im = ''
             e = sys.exc_info()[0]
@@ -18,7 +19,7 @@ class Alphabet:
             print "Error: " + str(e) 
             sys.exit(1)
 
-    def regionForLetter(self, letter):
+    def regionForLetterAndVerticalOffset(self, letter):
         try:
             region = self.im.crop(self.lettersOffset[letter])
         except:
@@ -26,7 +27,13 @@ class Alphabet:
             print "When extracting region for letter" + letter
             print "Error: " + str(e)
             region=''
-        return region
+        return region, self.letterVerticalOffset(letter)
+    
+    def letterVerticalOffset(self, letter):
+        if letter in 'pqjyg,¡¿':
+            return self.defaultVerticalOffset
+        else:
+            return 0
 
     def __generateLettersOffsetDict(self):
         lettersOffset = {}
@@ -35,12 +42,12 @@ class Alphabet:
         lettersOffset["b"]=(1144,40,1175,79)
         lettersOffset["c"]=(1176,40,1203,79)
         lettersOffset["d"]=(1204,40,1235,79)
-        lettersOffset["e"]=(1236,40,1275,79)
+        lettersOffset["e"]=(1236,40,1267,79)
         lettersOffset["f"]=(0,80,32,119)
         lettersOffset["g"]=(32,80,63,119)
         lettersOffset["h"]=(64,80,99,119)
         lettersOffset["i"]=(100,80,123,119)
-        lettersOffset["j"]=(128,80,155,119)
+        lettersOffset["j"]=(132,80,150,119)
         lettersOffset["k"]=(156,80,188,119)
         lettersOffset["l"]=(192,80,215,119)
         lettersOffset["m"]=(216,80,251,119)
@@ -110,7 +117,7 @@ class Alphabet:
         lettersOffset["ä"]=(940,40,971,79)
         lettersOffset["Ü"]=(972,40,1003,79)
         lettersOffset["™"]=(120,0,163,40)
-        lettersOffset[" "]=(164,0,323,40)
+        lettersOffset[" "]=(164,0,195,40)
         lettersOffset["!"]=(324,0,339,40)
         lettersOffset['"']=(340,0,371,40)
         lettersOffset["#"]=(372,0,411,40)
@@ -122,6 +129,7 @@ class Alphabet:
         lettersOffset[")"]=(564,0,591,40)
         lettersOffset["*"]=(592,0,631,40)
         lettersOffset["+"]=(632,0,667,40)
+        lettersOffset[","]=(668,0,687,40)
         lettersOffset["]"]=(668,0,687,40)
         lettersOffset["-"]=(688,0,727,40)
         lettersOffset["."]=(728,0,743,40)
