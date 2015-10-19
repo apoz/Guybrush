@@ -26,6 +26,8 @@ python ./guybrush/guybrush.py -i imgs/Sample_1.jpg -o imgs/test33.png "Yo soy co
 
 Which outputs to:
 
+![alt tag](https://raw.githubusercontent.com/apoz/Guybrush/master/imgs/test33.png)
+
 https://raw.githubusercontent.com/apoz/Guybrush/master/imgs/test33.png
 
 # TO DO
