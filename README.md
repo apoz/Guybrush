@@ -22,12 +22,15 @@ More information can be found in the following link: https://pillow.readthedocs.
 
 ```
 python ./guybrush/guybrush.py -i imgs/Sample_1.jpg -o imgs/test33.png "Yo soy cola, tu pegamento"
-´´´
+```
+
 Which outputs to:
 
+https://raw.githubusercontent.com/apoz/Guybrush/master/imgs/test33.png
 
 # TO DO
 
 * Multi-line text support
 * Additional fonts
 * Animated gifs?
+* Stop wasting my life?
